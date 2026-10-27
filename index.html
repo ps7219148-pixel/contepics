@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ContepicS - Free YouTube Creator Tools</title>
+
+    <meta name="description" content="Free tools to help YouTube creators generate video ideas, write better titles, and resize thumbnails.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">Contepic<span>S</span></a>
+
+        <nav>
+            <a href="#tools">Tools</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="tagline">FREE TOOLS FOR YOUTUBE CREATORS</p>
+
+            <h1>Create Better Videos.<br>
+                <span>Grow Your Channel.</span>
+            </h1>
+
+            <p class="hero-text">
+                Discover ideas, write better titles, and create thumbnails
+                with simple tools designed for YouTube creators.
+            </p>
+
+            <a href="#tools" class="button">Explore Free Tools</a>
+        </section>
+
+        <section class="tools-section" id="tools">
+            <h2>Creator Tools</h2>
+
+            <p class="section-description">
+                Everything you need to plan and improve your next video.
+            </p>
+
+            <div class="tools-grid">
+
+                <article class="tool-card">
+                    <div class="tool-icon">💡</div>
+                    <h3>Video Idea Generator</h3>
+                    <p>Find fresh video ideas for your YouTube channel.</p>
+                    <button onclick="document.getElementById('idea-generator').scrollIntoView({ behavior: 'smooth' })">
+    Try Tool
+</button>
+                </article>
+
+                <article class="tool-card">
+    <div class="tool-icon">✍️</div>
+    <h3>Title & Description Generator</h3>
+    <p>Create title ideas and descriptions for your videos.</p>
+    <button onclick="openTitleGenerator()">
+        Try Tool
+    </button>
+</article>
+
+                <article class="tool-card">
+                    <div class="tool-icon">🖼️</div>
+                    <h3>Thumbnail Resizer</h3>
+                    <p>Prepare images in the right dimensions for YouTube.</p>
+                    <button onclick="document.getElementById('thumbnail-resizer').scrollIntoView({ behavior: 'smooth' })"></button>
+                        Try Tool
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="generator-section" id="title-generator">
+    <h2>YouTube Title & Description Generator</h2>
+
+    <p class="section-description">
+        Enter your video topic to generate title ideas and a description.
+    </p>
+
+    <div class="generator-box">
+        <label for="video-topic">What is your video about?</label>
+
+        <input
+            type="text"
+            id="video-topic"
+            placeholder="e.g. 5 ways to grow a YouTube channel"
+        >
+
+        <label for="video-category">Choose a category</label>
+
+        <select id="video-category">
+            <option value="general">General</option>
+            <option value="education">Education</option>
+            <option value="gaming">Gaming</option>
+            <option value="music">Music</option>
+            <option value="technology">Technology</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="vlog">Vlog</option>
+        </select>
+
+        <button class="generate-button" onclick="generateContent()">
+            Generate Ideas
+        </button>
+
+        <p id="generator-error" class="error-message" role="alert"></p>
+
+        <div id="generator-results" hidden>
+            <h3>Title Suggestions</h3>
+            <ol id="title-results"></ol>
+
+            <h3>Your Video Description</h3>
+            <textarea id="description-result" rows="7" readonly></textarea>
+
+            <button class="copy-button" onclick="copyDescription()">
+                Copy Description
+            </button>
+        </div>
+    </div>
+</section>
+  <!-- Video Idea Generator -->
+<section class="generator-section" id="idea-generator">
+
+    <h2>YouTube Video Idea Generator</h2>
+
+    <p class="section-description">
+        Discover fresh video ideas for your next upload.
+    </p>
+
+    <div class="generator-box">
+
+        <label for="idea-niche">What's your channel about?</label>
+
+        <input
+            type="text"
+            id="idea-niche"
+            placeholder="e.g. Motivation, gaming, music"
+        >
+
+        <label for="idea-format">Choose your video format</label>
+
+        <select id="idea-format">
+            <option value="shorts">YouTube Shorts</option>
+            <option value="long">Long-form video</option>
+        </select>
+
+        <button
+            class="generate-button"
+            type="button"
+            onclick="generateVideoIdeas()"
+        >
+            Generate Video Ideas
+        </button>
+
+        <p id="idea-error" class="error-message" role="alert"></p>
+
+        <div id="idea-results" hidden>
+            <h3>Your Video Ideas</h3>
+            <ol id="idea-list"></ol>
+        </div>
+
+    </div>
+
+</section>  
+<!-- Thumbnail Resizer -->
+<section class="generator-section" id="thumbnail-resizer">
+    <h2>YouTube Thumbnail Resizer</h2>
+
+    <p class="section-description">
+        Resize your images to YouTube thumbnail dimensions: 1280 × 720 pixels.
+    </p>
+
+    <div class="generator-box">
+        <label for="thumbnail-upload">Choose an image</label>
+        <input
+            type="file"
+            id="thumbnail-upload"
+            accept="image/*"
+        >
+
+        <p id="thumbnail-error" class="error-message" role="alert"></p>
+
+        <div id="thumbnail-preview-container" hidden>
+            <h3>Preview</h3>
+            <img
+                id="thumbnail-preview"
+                alt="Resized YouTube thumbnail preview"
+                style="width: 100%; max-width: 640px; height: auto;"
+            >
+
+            <p id="thumbnail-dimensions"></p>
+
+            <button
+                class="generate-button"
+                type="button"
+                onclick="resizeThumbnail()"
+            >
+                Resize Thumbnail
+            </button>
+
+            <button
+                class="generate-button"
+                type="button"
+                id="download-thumbnail"
+                hidden
+                onclick="downloadThumbnail()"
+            >
+                Download Thumbnail
+            </button>
+        </div>
+    </div>
+</section>
+</main>
+
+    <footer>
+        <p>© 2026 ContepicS. Built for creators.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

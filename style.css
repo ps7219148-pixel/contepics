@@ -1,0 +1,380 @@
+/* General settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1020;
+    color: #f5f7ff;
+    line-height: 1.6;
+}
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    border-bottom: 1px solid #202944;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #7c5cff;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar nav a {
+    color: #c4c9dc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #9c87ff;
+}
+
+/* Main hero section */
+.hero {
+    text-align: center;
+    padding: 100px 20px 90px;
+    background: radial-gradient(
+        circle at top,
+        #20204b 0%,
+        #0b1020 65%
+    );
+}
+
+.tagline {
+    display: inline-block;
+    color: #b5a7ff;
+    border: 1px solid #51428c;
+    background: #1b1939;
+    border-radius: 30px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    color: #9b87ff;
+}
+
+.hero-text {
+    color: #b8bfd3;
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-size: 17px;
+}
+
+.button {
+    display: inline-block;
+    background: #7c5cff;
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background: #6543ef;
+    transform: translateY(-2px);
+}
+
+/* Creator tools section */
+.tools-section {
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.tools-section h2,
+.about-section h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.section-description {
+    color: #aeb6cc;
+    margin-bottom: 40px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.tool-card {
+    background: #121a30;
+    border: 1px solid #27314c;
+    border-radius: 14px;
+    padding: 30px 24px;
+    text-align: left;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    border-color: #7c5cff;
+}
+
+.tool-icon {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.tool-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.tool-card p {
+    color: #aeb6cc;
+    margin-bottom: 22px;
+}
+
+.tool-card button {
+    background: #7c5cff;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tool-card button:hover {
+    background: #6543ef;
+}
+
+/* About section */
+.about-section {
+    text-align: center;
+    padding: 65px 20px 80px;
+    background: #10172a;
+}
+
+.about-section p {
+    color: #b8bfd3;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    color: #929bb3;
+    border-top: 1px solid #202944;
+    font-size: 14px;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 800px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 75px 20px;
+    }
+
+    .tools-section {
+        padding: 55px 6%;
+    }
+
+    .tool-card {
+        text-align: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+/* Title and description generator */
+
+.generator-section {
+    padding: 70px 8%;
+    text-align: center;
+    background: #0e1426;
+}
+
+.generator-box {
+    max-width: 700px;
+    margin: 35px auto 0;
+    padding: 30px;
+    background: #121a30;
+    border: 1px solid #27314c;
+    border-radius: 14px;
+    text-align: left;
+}
+
+.generator-box label {
+    display: block;
+    margin: 20px 0 8px;
+    font-weight: bold;
+}
+
+.generator-box input,
+.generator-box select,
+.generator-box textarea {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #35415e;
+    border-radius: 7px;
+    background: #0b1020;
+    color: #f5f7ff;
+    font: inherit;
+}
+
+.generator-box input:focus,
+.generator-box select:focus,
+.generator-box textarea:focus {
+    outline: 2px solid #7c5cff;
+    outline-offset: 2px;
+}
+
+.generate-button,
+.copy-button {
+    margin-top: 22px;
+    padding: 13px 20px;
+    background: #7c5cff;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.generate-button:hover,
+.copy-button:hover {
+    background: #6543ef;
+}
+
+#generator-results {
+    margin-top: 30px;
+}
+
+#generator-results h3 {
+    margin: 25px 0 12px;
+}
+
+#title-results {
+    padding-left: 25px;
+}
+
+#title-results li {
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+#description-result {
+    resize: vertical;
+}
+
+.error-message {
+    color: #ff9999;
+    margin-top: 12px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .generator-section {
+        padding: 50px 5%;
+    }
+
+    .generator-box {
+        padding: 20px;
+    }
+}
+/* Individual title copy buttons */
+
+#title-results li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+#title-results li span {
+    overflow-wrap: anywhere;
+}
+
+.copy-title-button {
+    flex-shrink: 0;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #27314c;
+    color: white;
+    cursor: pointer;
+}
+
+.copy-title-button:hover {
+    background: #7c5cff;
+}
+/* ContepicS - Consistent tool buttons */
+.tool-card button {
+    display: inline-block;
+    background: #7c5cff;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.tool-card button:hover {
+    background: #6845eb;
+    transform: translateY(-2px);
+}
